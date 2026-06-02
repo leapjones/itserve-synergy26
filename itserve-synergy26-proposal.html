@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITServe Synergy 26 — AI for Leaders | Leap Advisory Partners</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #02457C;
+    --navy-dark: #013562;
+    --navy-light: #0A5A9E;
+    --teal: #68CCC3;
+    --teal-dark: #4FB3A9;
+    --teal-light: #C3EBE7;
+    --coral: #FF5C5C;
+    --coral-dark: #E64545;
+    --cream: #FEF5F0;
+    --cream-nav: #EAE5DF;
+    --muted: #5B5B5F;
+    --almost-black: #01010B;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--almost-black);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--cream-nav);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(2,69,124,0.1);
+  }
+
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--teal-dark); }
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--teal-dark); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(104,204,195,0.08);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255,92,92,0.06);
+  }
+
+  .hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 span { color: var(--teal); }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--teal-light);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .hero-meta-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    opacity: 0.8;
+  }
+
+  .hero-meta-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--teal);
+    padding: 1.5rem 2rem;
+  }
+
+  .stats-bar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-item {}
+
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .stat-desc {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--navy);
+    opacity: 0.75;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 4rem 2rem;
+  }
+
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .section-body {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 640px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  /* CREDENTIALS */
+  .credentials {
+    background: var(--cream);
+  }
+
+  .cred-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .cred-card {
+    background: var(--white);
+    border: 1px solid rgba(2,69,124,0.1);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem;
+  }
+
+  .cred-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .cred-card p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* SESSIONS */
+  .sessions {
+    background: var(--white);
+  }
+
+  .session-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .session-timeline::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal), var(--navy));
+  }
+
+  .session-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+
+  .session-item:not(:last-child) {
+    border-bottom: 1px solid rgba(2,69,124,0.07);
+  }
+
+  .session-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--teal);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    border: 3px solid var(--white);
+  }
+
+  .session-content {}
+
+  .session-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    background: var(--teal-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .session-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .session-content p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .session-outcomes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .outcome-pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--navy);
+    background: rgba(2,69,124,0.06);
+    border: 1px solid rgba(2,69,124,0.12);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+  }
+
+  /* ELITE DAY */
+  .elite-day {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .elite-day::before {
+    content: 'ELITE DAY';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(104,204,195,0.05);
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+  }
+
+  .elite-day .section-title { color: var(--white); }
+  .elite-day .section-eyebrow { color: var(--coral); }
+  .elite-day .section-body { color: var(--teal-light); }
+
+  .elite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .elite-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(104,204,195,0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .elite-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .elite-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 0.4rem;
+  }
+
+  .elite-card p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  /* DELIVERABLES */
+  .deliverables {
+    background: var(--cream);
+  }
+
+  .deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .deliverable-card {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid rgba(2,69,124,0.1);
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .deliverable-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(2,69,124,0.1);
+  }
+
+  .deliverable-value {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--teal-dark);
+    background: var(--teal-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .deliverable-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    padding-right: 3rem;
+  }
+
+  .deliverable-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .deliverable-accent {
+    width: 32px;
+    height: 3px;
+    background: var(--teal);
+    border-radius: 2px;
+    margin-bottom: 0.75rem;
+  }
+
+  /* VALUE PROOF */
+  .value-proof {
+    background: var(--white);
+  }
+
+  .value-math {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .value-math p {
+    color: var(--teal-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+  }
+
+  .value-math .big-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .value-math .big-label {
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* PRICING */
+  .pricing {
+    background: var(--cream);
+  }
+
+  .pricing-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 2px solid var(--navy);
+    overflow: hidden;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .pricing-header {
+    background: var(--navy);
+    padding: 2rem 2.5rem;
+    text-align: center;
+  }
+
+  .pricing-header .eyebrow { color: var(--coral); }
+
+  .pricing-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-header .price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1;
+  }
+
+  .pricing-header .price-sub {
+    font-size: 0.85rem;
+    color: var(--teal-light);
+    opacity: 0.8;
+    margin-top: 0.3rem;
+  }
+
+  .pricing-body {
+    padding: 2rem 2.5rem;
+  }
+
+  .pricing-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(2,69,124,0.08);
+    font-size: 0.9rem;
+  }
+
+  .pricing-line:last-child { border-bottom: none; }
+
+  .pricing-line-label {
+    color: var(--almost-black);
+    font-weight: 500;
+  }
+
+  .pricing-line-val {
+    font-weight: 600;
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+  }
+
+  .pricing-line-val.teal { color: var(--teal-dark); }
+
+  .deposit-box {
+    background: var(--teal-light);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .deposit-item {}
+  .deposit-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.7;
+    margin-bottom: 0.3rem;
+  }
+  .deposit-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--navy);
+    text-align: center;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(104,204,195,0.06);
+  }
+
+  .cta-section h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-section h2 span { color: var(--teal); }
+
+  .cta-section p {
+    color: var(--teal-light);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    opacity: 0.85;
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--teal);
+    color: var(--navy);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.9rem 2.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-primary:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  footer span { color: var(--teal); }
+
+  /* DIVIDER */
+  .teal-divider {
+    height: 4px;
+    background: linear-gradient(to right, var(--teal), var(--coral), var(--teal));
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .cred-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+    .hero { padding: 3rem 1.5rem; }
+    .pricing-body { padding: 1.5rem; }
+    .pricing-header { padding: 1.5rem; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+  .fade-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">LEAP <span>ADVISORY</span> PARTNERS</div>
+  <ul>
+    <li><a href="#credentials">About Lauren</a></li>
+    <li><a href="#sessions">Sessions</a></li>
+    <li><a href="#deliverables">What They Get</a></li>
+    <li><a href="#pricing">Investment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow fade-up">ITServe Alliance Synergy 26 · Chicago · October 28–30</span>
+    <h1 class="fade-up fade-up-delay-1">AI for <span>Leaders</span>.<br>Not Theory.</h1>
+    <p class="hero-sub fade-up fade-up-delay-2">A 4-session AI transformation program built for the 250 elite IT staffing executives in the room. They leave with real AI employees, real frameworks, and real access — not a slide deck.</p>
+    <div class="hero-meta fade-up fade-up-delay-3">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Track</span>
+        <span class="hero-meta-value">AI for Leaders — Elite Leaders Lab</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Format</span>
+        <span class="hero-meta-value">3 Virtual Pre-Conference + Elite Day In-Person</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Audience</span>
+        <span class="hero-meta-value">250 Elite IT Staffing Executives</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-num">250</div>
+      <div class="stat-desc">Elite Executives</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-desc">Total Sessions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-desc">AI Employees Per Leader</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">30+</div>
+      <div class="stat-desc">Years in Staffing</div>
+    </div>
+  </div>
+</div>
+
+<div class="teal-divider"></div>
+
+<!-- CREDENTIALS -->
+<section class="credentials" id="credentials">
+  <div class="section-inner">
+    <span class="section-eyebrow">Why Lauren B. Jones</span>
+    <h2 class="section-title">Built for this room.<br>Not borrowed from another one.</h2>
+    <p class="section-body">Lauren isn't an AI keynote speaker who learned staffing. She's a 30-year staffing industry veteran who built an AI advisory practice because she saw what was coming and refused to let her clients get left behind.</p>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <h4>Founder & CEO, Leap Advisory Partners</h4>
+        <p>Vendor-neutral staffing tech advisory firm built around BUILD. CHANGE. ADOPT. — serving mid-to-large staffing agencies at the C-suite level. Not a consultant. An operator.</p>
+      </div>
+      <div class="cred-card">
+        <h4>Recognized AI Practitioner in Staffing</h4>
+        <p>Speaker at TechServe Alliance, Bullhorn Engage Boston 2026, REACH NYC, and others. Actively building the AI workflows she teaches — not presenting theory from a stage.</p>
+      </div>
+      <div class="cred-card">
+        <h4>Founder, Real Girl's Roadmap to Mastering AI</h4>
+        <p>A separate AI literacy brand reaching thousands of professionals learning to work alongside AI. Real frameworks. Real results. Built from the ground up.</p>
+      </div>
+      <div class="cred-card">
+        <h4>Creator of RECIPE & STAMP Frameworks</h4>
+        <p>Proprietary AI prompting and skill-building systems designed specifically for non-technical executives who need to move fast and get real output from AI — not just understand it.</p>
+      </div>
+      <div class="cred-card">
+        <h4>Anti-Complexity by Design</h4>
+        <p>Lauren's operating philosophy is the right fit for this audience: find great people for great jobs, and everything else is noise. She cuts through the hype and gets executives to the output.</p>
+      </div>
+      <div class="cred-card">
+        <h4>The Human They Call First</h4>
+        <p>She's built her reputation on being the person executives call when they have a "dumb question" about AI — because they know they won't be judged. That energy translates directly to this room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSIONS -->
+<section class="sessions" id="sessions">
+  <div class="section-inner">
+    <span class="section-eyebrow">The Program</span>
+    <h2 class="section-title">Three virtual sessions.<br>One elite day. Zero fluff.</h2>
+    <p class="section-body">Each session builds on the last. By Elite Day, the room isn't watching a demo — they're deploying their own AI employees in real time.</p>
+
+    <div class="session-timeline">
+
+      <div class="session-item">
+        <div class="session-num">01</div>
+        <div class="session-content">
+          <span class="session-tag">Virtual · August</span>
+          <h3>Strategic Task Analysis</h3>
+          <p>Before anyone touches an AI tool, they need to know what to hand off. This session teaches executives how to audit their own workflows, identify the highest-leverage tasks for AI delegation, and build the strategic foundation for everything that follows. No prompting yet — just clarity on where the real value is.</p>
+          <div class="session-outcomes">
+            <span class="outcome-pill">Task audit framework</span>
+            <span class="outcome-pill">AI delegation map</span>
+            <span class="outcome-pill">Priority stack</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <div class="session-num">02</div>
+        <div class="session-content">
+          <span class="session-tag">Virtual · September</span>
+          <h3>AI Prompt Engineering: RECIPE + STAMP</h3>
+          <p>This is where the room gets their hands dirty. RECIPE teaches the structure of a prompt that actually works. STAMP builds the skill of repeating that result across every use case. Executives leave this session with working prompts they built themselves — for their actual workflows, not hypothetical ones.</p>
+          <div class="session-outcomes">
+            <span class="outcome-pill">RECIPE framework mastery</span>
+            <span class="outcome-pill">STAMP skill builder</span>
+            <span class="outcome-pill">Personal prompt library</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <div class="session-num">03</div>
+        <div class="session-content">
+          <span class="session-tag">Virtual · October Pre-Conference</span>
+          <h3>Practical Agent Implementation</h3>
+          <p>The bridge session. Executives move from prompting to building — learning how to identify agent-ready workflows, set up simple automation chains, and prepare to deploy their first AI employees at Elite Day. By the time they land in Chicago, they've already done the thinking. Elite Day is just the execution.</p>
+          <div class="session-outcomes">
+            <span class="outcome-pill">Agent-ready workflow map</span>
+            <span class="outcome-pill">Pre-build prep work</span>
+            <span class="outcome-pill">Elite Day ready</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="session-item">
+        <div class="session-num">04</div>
+        <div class="session-content">
+          <span class="session-tag">In-Person · Chicago · October 28–30</span>
+          <h3>Elite Day: Deploy Your AI Team</h3>
+          <p>This is the payoff. In a live, hands-on session, executives build and deploy three custom AI employees tailored to their own organizations. Recruiting agent. Operations agent. Business development agent. They walk out of the room with a functioning AI team — not a plan to build one later.</p>
+          <div class="session-outcomes">
+            <span class="outcome-pill">3 AI employees deployed</span>
+            <span class="outcome-pill">Live build session</span>
+            <span class="outcome-pill">Organization-specific</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="deliverables" id="deliverables">
+  <div class="section-inner">
+    <span class="section-eyebrow">What Every Attendee Walks Away With</span>
+    <h2 class="section-title">This isn't a conference experience.<br>It's an implementation kit.</h2>
+    <p class="section-body">Every ITServe Elite member who goes through this program leaves with tools they can use Monday morning. Not slides. Not worksheets. Actual infrastructure.</p>
+
+    <div class="deliverables-grid">
+      <div class="deliverable-card">
+        <div class="deliverable-accent"></div>
+        <div class="deliverable-value">HIGH VALUE</div>
+        <h4>3 Deployed AI Employees</h4>
+        <p>Built live during Elite Day. Recruiting, operations, and business development agents — configured for their specific workflow, not a generic template.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-accent"></div>
+        <div class="deliverable-value">PROPRIETARY</div>
+        <h4>RECIPE Prompting Guide</h4>
+        <p>Lauren's signature prompting framework — the one she uses with every Leap Advisory client. A practical field guide they'll reference every single day.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-accent"></div>
+        <div class="deliverable-value">PROPRIETARY</div>
+        <h4>STAMP Skill Builder</h4>
+        <p>The companion system to RECIPE. Helps executives build repeatable prompting habits across their team — so the skill doesn't stay locked in one person's head.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-accent"></div>
+        <div class="deliverable-value">90 DAYS</div>
+        <h4>Leap AI App Access</h4>
+        <p>90 days of access to Leap's custom AI application — the same tools Lauren's team uses internally. Not a demo environment. The actual product.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-accent"></div>
+        <div class="deliverable-value">30 DAYS</div>
+        <h4>Leap Connect Community</h4>
+        <p>30-day founding member access to Leap Connect — a fully whitelabeled community platform where AI-forward staffing leaders share what's actually working. Community as a Service, not a Slack channel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROOF -->
+<section class="value-proof">
+  <div class="section-inner">
+    <span class="section-eyebrow">The Business Case</span>
+    <h2 class="section-title">Put it in a spreadsheet.<br>It's an obvious yes.</h2>
+    <p class="section-body">250 elite executives. Each one leaving with real AI infrastructure, proprietary frameworks, and 120 days of active product access. The math is simple.</p>
+
+    <div class="value-math">
+      <p>Total standalone value delivered to ITServe members</p>
+      <div class="big-num">$8,000+</div>
+      <div class="big-label">per attendee in tangible deliverable value</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+      <div style="background: var(--cream); border-radius: 8px; padding: 1.25rem; text-align: center;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; color: var(--navy);">250</div>
+        <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Elite members in the room</div>
+      </div>
+      <div style="background: var(--cream); border-radius: 8px; padding: 1.25rem; text-align: center;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; color: var(--navy);">$5K</div>
+        <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Each member's buy-in</div>
+      </div>
+      <div style="background: var(--cream); border-radius: 8px; padding: 1.25rem; text-align: center;">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; color: var(--navy);">$1.25M</div>
+        <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Total Elite program revenue</div>
+      </div>
+      <div style="background: var(--teal-light); border-radius: 8px; padding: 1.25rem; text-align: center; border: 1px solid var(--teal);">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; color: var(--navy);">4.4%</div>
+        <div style="font-size: 0.75rem; color: var(--navy); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Of program revenue — the investment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <span class="section-eyebrow">The Investment</span>
+    <h2 class="section-title" style="text-align:center; margin-bottom: 2rem;">One package.<br>No games.</h2>
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <span class="eyebrow">Full Transformation Package</span>
+        <h2>AI for Leaders</h2>
+        <div class="price">$55,000</div>
+        <div class="price-sub">Flat package fee — all sessions, all deliverables, 250 members</div>
+      </div>
+      <div class="pricing-body">
+        <div class="pricing-line">
+          <span class="pricing-line-label">3 Virtual Pre-Conference Sessions (1hr each)</span>
+          <span class="pricing-line-val teal">Included</span>
+        </div>
+        <div class="pricing-line">
+          <span class="pricing-line-label">Elite Day In-Person Session — Chicago</span>
+          <span class="pricing-line-val teal">Included</span>
+        </div>
+        <div class="pricing-line">
+          <span class="pricing-line-label">3 AI Employees per Attendee (250 builds)</span>
+          <span class="pricing-line-val teal">Included</span>
+        </div>
+        <div class="pricing-line">
+          <span class="pricing-line-label">RECIPE Prompting Guide (250 copies)</span>
+          <span class="pricing-line-val teal">Included</span>
+        </div>
+        <div class="pricing-line">
+          <span class="pricing-line-label">STAMP Skill Builder (250 copies)</span>
+          <span class="pricing-line-val teal">Included</span>
+        </div>
+        <div class="pricing-line">
+          <span class="pricing-line-label">Leap AI App Access — 90 Days (250 seats)</span>
+          <span class="pricing-line-val teal">Included</span>
+        </div>
+        <div class="pricing-line">
+          <span class="pricing-line-label">Leap Connect Community — 30 Days (250 seats)</span>
+          <span class="pricing-line-val teal">Included</span>
+        </div>
+
+        <div class="deposit-box">
+          <div class="deposit-item">
+            <div class="deposit-label">50% Deposit at Signing</div>
+            <div class="deposit-value">$27,500</div>
+          </div>
+          <div class="deposit-item">
+            <div class="deposit-label">Balance Due 30 Days Pre-Event</div>
+            <div class="deposit-value">$27,500</div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.75rem; color: var(--muted); margin-top: 1rem; line-height: 1.6;">Deposit is non-refundable upon contract signing. Cancellation within 60 days of the event date: full fee is owed. Travel and accommodation for in-person Elite Day sessions invoiced separately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to take <span>the Leap</span>?</h2>
+  <p>Let's get the contract moving. Your members deserve better than another AI overview session — and this is it.</p>
+  <a href="mailto:lauren@leapadvisorypartners.com" class="btn-primary">Let's Make This Happen</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Leap Advisory Partners</span> · leapadvisorypartners.com · Prepared exclusively for ITServe Alliance Synergy 26</p>
+</footer>
+
+</body>
+</html>
